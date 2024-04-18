@@ -1,0 +1,13 @@
+version: '3'
+services:
+  osrm-backend:
+    image: ghcr.io/project-osrm/osrm-backend
+    container_name: osrm-engine
+    volumes:
+      - ${PWD}:/data
+    command: >
+      sh -c "
+      osrm-extract -p /opt/car.lua /data/philippines-latest.osm.pbf &&
+      osrm-partition /data/philippines-latest.osrm &&
+      osrm-customize /data/philippines-latest.osrm
+      "
