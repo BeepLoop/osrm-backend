@@ -189,3 +189,7 @@ When using the code in a (scientific) publication, please cite
  address = {New York, NY, USA},
 }
 ```
+## Using Docker Compose 
+```bash
+docker compose up
+```
